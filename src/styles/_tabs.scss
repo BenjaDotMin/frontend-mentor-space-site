@@ -1,0 +1,15 @@
+ul{
+    &.tabs{
+        li{cursor: pointer;
+            a{height: 100%; display: flex; align-items: center;}
+            &:after{content:""; position: absolute; height: 3px; background-color: white; opacity: 0.5; transform: scaleX(0); left:0; right:0; bottom:0; transition: transform 0.3s, opacity 0.3s ease-out; will-change: opacity, transform;}
+            &.active, &:hover{
+                &:after{transform: scaleX(1);}
+            }                  
+            &.active{color:white !important; cursor: default;
+                a{cursor: default;}
+                &:after{opacity: 1;}
+            }             
+        }
+    }    
+}

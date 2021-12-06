@@ -1,0 +1,60 @@
+@import "./_mixins.scss";
+@import "./_colors.scss";
+
+.home{display: flex; align-items: center; justify-content: space-between; padding-right: 167px; height: 100%;
+    .background-image{
+        &.home{background-image: url("../img/background-home-desktop.jpg")}
+    }
+    &__left{padding-top:44px; flex: 0 1 445px;
+        h1{@include font(2.8, 33.6, 4.72, $sanSerifCond, 400, $lightBlue); margin-left: -1px; overflow:hidden;
+            span{@include font(15, 128, 0, $serif, 400, white); display: block; margin: 46px 0 46px -1px; overflow: hidden}
+        }
+        p{@include font(1.8, 32, 0, $sanSerif, 400, $lightBlue); overflow: hidden;}
+    }
+    &__right{padding-top: 151px;    
+        button{transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); outline:0 solid rgba(255, 255, 255, 0.1); height: 274px; width: 274px; padding: 0; background-color: white; border: none; border-radius: 100%; @include font(3.2, 0, 2, $serif, 400, $black); transform:translateX(2px); cursor: pointer;
+            &:hover{outline:88px solid rgba(255, 255, 255, 0.1);}
+        }
+    }
+
+    @include mq(1140){padding-right: 98px; 
+        &__right{padding-top: 55px;
+            button{height: 230px; width: 230px; font-size: 2.8rem; transform: translateX(0);
+                &:hover{outline:40px solid rgba(255, 255, 255, 0.1);}
+            }
+        }
+    }   
+
+    @include mq(945){padding-right:55px;}  
+
+    @include mq(870){flex-direction: column; flex: 1;
+        .background-image{
+            &.home{background-image: url("../img/background-home-mobile.jpg")}
+        }
+        &__left{text-align: center; flex: 0 1 340px;
+            h1{font-size: 2rem; line-height: 24px; letter-spacing: 3.38px;
+                span{margin: 25px 0 25px 0px;}
+            }
+            p{font-size: 1.6rem; line-height: 28px; max-width: 444px;}
+        }
+        &__right{padding-bottom: 80px; padding-top: 80px;
+            button{height: 242px; width: 242px;}
+        }
+    }    
+
+    @include mq(555){
+        &__left{padding-top: 32px;
+            h1{font-size: 1.6rem; line-height: 19.2px; letter-spacing: 2.7px;
+                span{font-size: 8rem; margin: 0;}
+            }
+            p{font-size: 1.5rem; line-height: 25px;}
+        }       
+    }
+
+    @include mq(475){padding-right: 30px;  
+        &__left{padding-top: 26px;}
+        &__right{padding-top: 0; padding-bottom: 40px;
+            button{height: 150px; width: 150px; font-size: 2rem; letter-spacing: 1.25px;}
+        }
+    }
+}

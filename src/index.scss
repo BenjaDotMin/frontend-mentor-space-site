@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+@import "./styles/_mixins";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 40px;
+  min-height: 100vh;
+  overflow: hidden;
+  @include mq(870){overflow: visible;}  
+  @include mq(768){padding-top: 0;}
+}
+
+*{box-sizing: border-box;}
+
+html{font-size: 62.5%; background-color: #0b0e17;}
+
+h1, h2, h3, h4, p, ul{margin: 0;}
+
+i{font-style: normal; display: inline-block;}
+
+a{color:inherit; text-decoration: none;}
+
+img{display: block; max-width: 100%;}
+
+ul{padding: 0;
+  li{list-style: none;}
+}
+
+main{display: grid; grid-auto-rows: calc(100vh - 136px); justify-content: center; 
+  @include mq(870){grid-auto-rows: auto;}  
+  .container{max-width: 1440px; padding: 77px 0 0 167px;
+    .background-image{background-size: cover; background-repeat: no-repeat; position: fixed; top:0; right:0; bottom:0; left:0; z-index: -1;}
+    @include mq(1140){padding-left:98px;}  
+    @include mq(945){padding-left:55px;}  
+    @include mq(870){padding: 50px 0 0 55px;}  
+    @include mq(590){padding: 0 0 0 55px;}  
+    @include mq(475){padding: 0 0 0 30px;}
+  } 
+}
+
+// ::-webkit-scrollbar{width: 6px; height:6px;}
+// ::-webkit-scrollbar-track{background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; margin: 40px 0 50px;}
+// ::-webkit-scrollbar-thumb{background-color: rgba(255, 255, 255, 0.3); border-radius: 10px;}
+// ::-webkit-scrollbar-thumb:hover{background-color: rgba(255, 255, 255, 0.5);}

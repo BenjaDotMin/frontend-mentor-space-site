@@ -1,0 +1,12 @@
+$serif: 'Bellefair', serif;
+$sanSerif: 'Barlow', sans-serif;
+$sanSerifCond: 'Barlow Condensed', sans-serif;
+
+@mixin font($s:1.6, $lh:24, $ls:0, $f:$sanSerif, $w:400, $c:white){
+    font-size: $s+rem; line-height: $lh+px; letter-spacing: $ls+px; font-family: $f; font-weight:$w; color: $c
+}
+
+@mixin mq($size){ 
+    @media(max-width: $size + px){@content}; 
+}
+

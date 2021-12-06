@@ -1,0 +1,124 @@
+@import "./_mixins.scss";
+@import "./_colors.scss";
+
+.crew{display: flex; justify-content: space-between; padding-right: 167px; height: 100%;
+    .background-image{
+        &.crew{background-image: url("../img/background-crew-desktop.jpg")}
+    }
+    &__left{flex: 0 1 508px; display:grid; grid-template-rows: 81px 1fr 124px; align-content: center;
+        h2{@include font(2.8, 33.6, 4.72, $sanSerifCond);flex: 0 1 21.4%; overflow: hidden;
+            span{font-weight: 700; opacity: 0.25; margin-right: 24px;} 
+        }  
+        ul{
+            &.crew__tab__dots{display: flex; gap:24px; padding-top: 15px;
+                li{width: 15px; height: 15px; background-color: white; opacity: 0.17; border-radius: 100%; transition: opacity 0.2s; will-change: opacity; cursor: pointer;
+                    &:hover{opacity: 0.5;}
+                    &.active{opacity: 1; cursor: default;}
+                }
+            }
+        }
+        .crew__content{display: none; justify-content: center; flex-direction: column;
+            h3{@include font(3.2, 37, 0, $serif); margin: 0; opacity: 0.5; text-transform: uppercase; overflow: hidden;}
+            h4{@include font(5.6, 64.18, -0.1, $serif); margin: 16px 0 25px; text-transform: uppercase; overflow: hidden;}
+            p{@include font(1.8, 32, 0, $sanSerif, 400, $lightBlue); padding-right: 75px; overflow: hidden;}
+            &.active{display:flex;}
+        }
+    }
+    &__right{display: flex; align-items: flex-end;
+        img{margin-top: -14px; transform: translateX(24px); display: none; max-width: 100%; max-height: 100%;
+            &.active{display: block;}
+        }
+    }
+
+    @include mq(1140){padding-right: 98px; 
+        &__left{
+            h2{font-size: 2.4rem;}
+            .crew__content{
+                p{padding-right:35px;}
+            }
+        }       
+    }   
+
+    @include mq(945){padding-right:55px;}  
+
+    @include mq(870){flex-direction: column; flex: 1; gap:30px;
+        .background-image{
+            &.crew{background-image: url("../img/background-crew-mobile.jpg")}
+        }
+        &__left{flex: 0 1 340px; text-align: center; grid-template-rows: 89px 50px 1fr;
+            h2{font-size: 2rem; letter-spacing: 3.38px; order:1;}
+            .crew__content{text-align: center; order:3;  
+                h3{font-size: 2.4rem; line-height:27.7px;}
+                h4{font-size: 4rem; line-height: 45.84px; margin: 10px 0 15px;}  
+                p{padding-right: 0; font-size: 1.6rem; line-height: 28px;}
+            }
+           ul{
+                &.crew__tab__dots{justify-content: center; gap:16px; order:2;
+                    li{width: 10px; height: 10px;}
+                }
+           }
+        }
+        &__right{justify-content: center;
+            img{transform: translateX(0); max-height: 400px; margin-top: 10px;}
+        }
+    }     
+
+    @include mq(590){
+        &__right{
+            img{max-height: 375px;}
+        }  
+    }
+
+    @include mq(565){
+        &__left{         
+            .crew__content{             
+                h4{font-size: 3rem; margin: 10px 0 5px;}
+            }           
+        }        
+    } 
+
+    @include mq(555){
+        &__left{padding-top: 32px;}       
+    }
+
+    @include mq(500){gap:10px; padding-top: 50px;
+        &__left{order:2; grid-template-rows:30px 1fr; padding-top: 0; gap:20px;
+            h2{position: absolute; top:80px; left: 0; right:0;}
+            ul{
+                &.crew__tab__dots{order:1;}
+            }
+            .crew__content{order:2; justify-content: flex-start;
+                h4{margin-bottom: 15px;}
+            }
+        }   
+        &__right{order:1; border-bottom: 1px solid rgba(151,151,151, 0.4);        
+            img{max-height: 255px;}
+        }   
+    }
+
+    @include mq(475){padding-right: 30px;  
+        &__left{padding-top: 6px;
+            h2{font-size: 1.6rem; letter-spacing: 2.7px; text-align: center; flex: 0 1 11%; }   
+            .crew__content{margin-top: 0;
+                h3{font-size: 1.6rem; line-height:18.34px;}
+                h4{font-size: 2.4rem; line-height: 27.5px;}  
+                p{font-size: 1.5rem; line-height: 25px;}
+            }           
+        }        
+        &__right{justify-content: center;}
+    }
+
+    @include mq(340){
+        &__left{         
+            .crew__content{              
+                h4{font-size: 2.2rem;}
+            }           
+        }        
+    } 
+  
+    @media(max-height:890px){
+        &__right{
+            img{margin-top: 0;}
+        }  
+    }
+}

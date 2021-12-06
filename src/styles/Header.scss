@@ -1,0 +1,52 @@
+@import "./_mixins.scss";
+
+header{display: flex; align-items: center; justify-content: space-between; height: 96px; padding-left: 55px;
+    img{min-width: 48px; height: 48px;}
+    hr{margin: 0; position: relative; left: 47px; z-index: 2; flex: 0 1 473px; border: 0; height: 0; border-top: 1px solid white; opacity: 0.25; transition: flex 0.3s ease-in-out;
+        @media(min-width: 1441px){flex: 1 1 473px;}
+    }
+    ul{display: flex; align-items: center; gap:50px; height: 100%; flex: 0 1 830px; background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(33px); padding: 1px 123px 0 123px; 
+        li{display: flex; align-items: center; @include font(1.6, 19.2, 2.7, $sanSerifCond); height: 100%; position: relative; cursor: pointer;
+            span{font-weight: 700; margin-right: 9px;}                                       
+        }
+    }
+    .burger-menu{min-width: 21px; height: 21px; cursor: pointer; position: relative; z-index: 5;} 
+
+    @media (min-width:590px) {
+        .burger-menu{display: none;}
+    }
+
+    @include mq(1040){
+        ul{padding: 0 48px; flex: 0 1 450px; gap:37px;}
+        hr{display: none;}      
+    }    
+
+    @include mq(768){padding-left: 39px;      
+        ul{
+            li{@include font(1.4, 16.8, 2.36, $sanSerifCond);
+                a{
+                    span{display: none;}
+                }
+            }
+        }
+    }
+
+    @include mq(590){padding-right: 39px; 
+        ul{padding: 0 0 0 50px; align-items: flex-start; transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); will-change: transform;
+            &.tabs{position: fixed; z-index: 4; right:-68vw; top:0; bottom:0; width: 68vw; flex-direction: column; justify-content: center; transform: translateX(0);
+                li{height: auto; width: 100%; font-size: 1.6rem;
+                    a{
+                        span{display: block;}
+                    }
+                    &:after{min-height: 31px; width: 3px; bottom:-7px; left:auto;}
+                }
+            }
+            &.active{ transform: translateX(-68vw);}
+        }
+    }
+
+    @include mq(475){ padding: 0 24px;  
+        ul{padding: 0 0 0 32px; gap:32px;}
+        img{min-width: 40px; height: 40px;}
+    }
+}
